@@ -1,0 +1,11 @@
+.filterContainer {
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.placeholder {
+  color: #888;
+  font-style: italic;
+}

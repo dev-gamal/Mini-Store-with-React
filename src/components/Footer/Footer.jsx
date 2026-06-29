@@ -5,7 +5,7 @@ function Footer() {
 
     return (
         <footer className={styles.footer}>
-            <p>&copy; {currentYear} Mini Shop - Built with React 19</p>
+            <p>&copy; {currentYear} Mini Store - Built with React 19</p>
             <p className={styles.subtitle}>Developed by GAMAL BADIE</p>
         </footer>
     );

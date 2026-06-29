@@ -5,7 +5,7 @@ function Header() {
     <header className={styles.header}>
       <div className={styles.logo}>
         <span className={styles.icon}>🛍️</span>
-        <h1>Mini Shop</h1>
+        <h1>Mini Store</h1>
       </div>
       <nav className={styles.nav}>
         <button className={styles.modeToggle} title="change the mode">
