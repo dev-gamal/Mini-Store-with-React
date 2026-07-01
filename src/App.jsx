@@ -12,10 +12,26 @@ function App() {
   const [cart, setCart] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("All");
 
+  const addToCart = (product) => {
+    setCart((prevCart) => {
+      const itemExists = prevCart.find((item) => item.id === product.id);
+
+      if (itemExists) {
+        return prevCart.map((item) =>
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item,
+        );
+      }
+
+      return [...prevCart, { ...product, quantity: 1 }];
+    });
+  };
+
   const deleteProduct = (id) => {
-    const updatedProducts = products.filter(product => product.id !== id);
+    const updatedProducts = products.filter((product) => product.id !== id);
     setProducts(updatedProducts);
-  }
+  };
 
   const categories = [
     "All",
@@ -58,7 +74,11 @@ function App() {
           <h2 style={{ marginBottom: "1rem", color: "#2c3e50" }}>
             Our Products
           </h2>
-          <ProductList products={displayedProducts} onDeleteProduct={deleteProduct} />
+          <ProductList
+            products={displayedProducts}
+            onDeleteProduct={deleteProduct}
+            onAddToCart={addToCart}
+          />
         </section>
 
         <aside>

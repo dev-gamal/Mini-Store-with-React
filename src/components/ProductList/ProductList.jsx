@@ -1,7 +1,7 @@
 import ProductCard from "../ProductCard/ProductCard";
 import styles from "./ProductList.module.css";
 
-function ProductList({ products, onDeleteProduct }) {
+function ProductList({ products, onDeleteProduct, onAddToCart }) {
   return (
     <div className={styles.listContainer}>
       {products.map((product) => (
@@ -9,6 +9,7 @@ function ProductList({ products, onDeleteProduct }) {
           key={product.id}
           product={product}
           onDeleteProduct={onDeleteProduct}
+          onAddToCart={onAddToCart}
         />
       ))}
     </div>

@@ -1,6 +1,6 @@
 import styles from './CartItem.module.css';
 
-function CartItem() {
+function CartItem({ cart, setCart}) {
   return (
     <div className={styles.item}>
       <div>
