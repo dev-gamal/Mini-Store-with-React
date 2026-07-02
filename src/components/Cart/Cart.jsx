@@ -1,18 +1,36 @@
-import CartItem from '../CartItem/CartItem';
-import styles from './Cart.module.css';
+import CartItem from "../CartItem/CartItem";
+import styles from "./Cart.module.css";
 
-function Cart() {
+function Cart({ cart }) {
+  const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+
+  const totalPrice = cart.reduce(
+    (total, item) => total + item.quantity * item.price,
+    0,
+  );
+
   return (
     <div className={styles.cartContainer}>
       <h3>My Cart</h3>
-      <div className={styles.itemsList}>
-        <CartItem />
-        <CartItem />
-      </div>
-      <div className={styles.summary}>
-        <p>Total articles : <span>2</span></p>
-        <p className={styles.totalPrice}>Total amount : <span>0.00 €</span></p>
-      </div>
+      
+      {cart.length === 0 ? (
+        <p className={styles.emptyMessage}>Your cart is empty</p>
+      ) : (
+        <>
+          <div className={styles.itemsList}>
+            {cart.map((item) => (
+              <CartItem key={item.id} item={item} />
+            ))}
+          </div>
+          
+          <div className={styles.summary}>
+            <p>Total articles : <span>{totalItems}</span></p>
+            <p className={styles.totalPrice}>
+              Total amount : <span>{totalPrice.toFixed(2)} €</span>
+            </p>
+          </div>
+        </>
+      )}
     </div>
   );
 }

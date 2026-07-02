@@ -82,7 +82,7 @@ function App() {
         </section>
 
         <aside>
-          <Cart />
+          <Cart cart={cart} />
         </aside>
       </main>
 

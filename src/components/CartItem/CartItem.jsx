@@ -1,11 +1,14 @@
-import styles from './CartItem.module.css';
+import styles from "./CartItem.module.css";
 
-function CartItem({ cart, setCart}) {
+function CartItem({ item }) {
   return (
     <div className={styles.item}>
-      <div>
-        <span className={styles.name}>Article Cart</span>
-        <span className={styles.price}> 0.00 €</span>
+      <div className={styles.details}>
+        <span className={styles.name}>{item.name}</span>
+        <span className={styles.price}>
+          {item.price.toFixed(2)} €{" "}
+          <span className={styles.qty}>x {item.quantity}</span>
+        </span>
       </div>
       <button className={styles.removeBtn}>❌</button>
     </div>
