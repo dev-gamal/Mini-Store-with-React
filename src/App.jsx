@@ -28,6 +28,10 @@ function App() {
     });
   };
 
+  const removeFromCart = (productId) => {
+    setCart((prevCart) => prevCart.filter((item) => item.id !== productId));
+  };
+
   const deleteProduct = (id) => {
     const updatedProducts = products.filter((product) => product.id !== id);
     setProducts(updatedProducts);
@@ -82,7 +86,7 @@ function App() {
         </section>
 
         <aside>
-          <Cart cart={cart} />
+          <Cart cart={cart} onRemoveFromCart={removeFromCart} />
         </aside>
       </main>
 

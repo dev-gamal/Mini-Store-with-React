@@ -1,6 +1,6 @@
 import styles from "./CartItem.module.css";
 
-function CartItem({ item }) {
+function CartItem({ item, onRemoveFromCart }) {
   return (
     <div className={styles.item}>
       <div className={styles.details}>
@@ -10,7 +10,12 @@ function CartItem({ item }) {
           <span className={styles.qty}>x {item.quantity}</span>
         </span>
       </div>
-      <button className={styles.removeBtn}>❌</button>
+      <button
+        className={styles.removeBtn}
+        onClick={() => onRemoveFromCart(item.id)}
+      >
+        ❌
+      </button>
     </div>
   );
 }
