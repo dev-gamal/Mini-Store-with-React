@@ -1,7 +1,7 @@
 import CartItem from "../CartItem/CartItem";
 import styles from "./Cart.module.css";
 
-function Cart({ cart, onRemoveFromCart }) {
+function Cart({ cart, onRemoveFromCart, onUpdateQuantity }) {
   const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
 
   const totalPrice = cart.reduce(
@@ -23,6 +23,7 @@ function Cart({ cart, onRemoveFromCart }) {
                 key={item.id}
                 item={item}
                 onRemoveFromCart={onRemoveFromCart}
+                onUpdateQuantity={onUpdateQuantity}
               />
             ))}
           </div>

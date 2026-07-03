@@ -32,6 +32,18 @@ function App() {
     setCart((prevCart) => prevCart.filter((item) => item.id !== productId));
   };
 
+  const updateQuantity = (productId, delta) => {
+    setCart((prevCart) => {
+      return prevCart.map((item) => {
+        if (item.id === productId) {
+          const newQnty = item.quantity + delta;
+          return { ...item, quantity: Math.max(1, newQnty) };
+        }
+        return item;
+      });
+    });
+  };
+
   const deleteProduct = (id) => {
     const updatedProducts = products.filter((product) => product.id !== id);
     setProducts(updatedProducts);
@@ -86,7 +98,11 @@ function App() {
         </section>
 
         <aside>
-          <Cart cart={cart} onRemoveFromCart={removeFromCart} />
+          <Cart
+            cart={cart}
+            onRemoveFromCart={removeFromCart}
+            onUpdateQuantity={updateQuantity}
+          />
         </aside>
       </main>
 
