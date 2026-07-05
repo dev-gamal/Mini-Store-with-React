@@ -1,0 +1,34 @@
+.light-mode {
+  background-color: #f5f6fa;
+  color: #2c3e50;
+  transition: all 0.3s ease;
+}
+
+.dark-mode {
+  background-color: #1a1a2e;
+  color: #ecf0f1;
+  transition: all 0.3s ease;
+}
+
+.dark-mode header,
+.dark-mode div[class*="card"],
+.dark-mode div[class*="Cart_cartContainer"],
+.dark-mode div[class*="CategoryFilter_filterContainer"] {
+  background-color: #16213e;
+  color: #ecf0f1;
+  border-color: #0f3460;
+}
+
+.dark-mode input,
+.dark-mode select {
+  background-color: #1a1a2e;
+  color: #ecf0f1;
+  border-color: #0f3460;
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4 {
+  color: #ecf0f1;
+}
