@@ -13,7 +13,7 @@ function Header({ isDarkMode, setIsDarkMode }) {
         onClick={() => setIsDarkMode(!isDarkMode)} 
         title="change the mode"
         >
-          {isDarkMode ? '☀️ Mode Clair' : '🌙 Mode Sombre'}
+          {isDarkMode ? '☀️ Light Mode' : '🌙 Dark Mode'}
         </button>
       </nav>
     </header>

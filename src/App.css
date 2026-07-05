@@ -11,24 +11,34 @@
 }
 
 .dark-mode header,
+.dark-mode aside > div,
+.dark-mode section > div:nth-of-type(1),
+.dark-mode section > div:nth-of-type(2),
 .dark-mode div[class*="card"],
-.dark-mode div[class*="Cart_cartContainer"],
-.dark-mode div[class*="CategoryFilter_filterContainer"] {
-  background-color: #16213e;
-  color: #ecf0f1;
-  border-color: #0f3460;
-}
-
-.dark-mode input,
-.dark-mode select {
-  background-color: #1a1a2e;
-  color: #ecf0f1;
-  border-color: #0f3460;
+.dark-mode div[class*="summary"],
+.dark-mode div[class*="qtyControls"] {
+  background-color: #16213e !important;
+  border-color: #0f3460 !important;
 }
 
 .dark-mode h1,
 .dark-mode h2,
 .dark-mode h3,
-.dark-mode h4 {
-  color: #ecf0f1;
+.dark-mode h4,
+.dark-mode p,
+.dark-mode span,
+.dark-mode label,
+.dark-mode button[class*="qtyBtn"] {
+  color: #ecf0f1 !important;
+}
+
+.dark-mode input,
+.dark-mode select {
+  background-color: #1a1a2e !important;
+  color: #ecf0f1 !important;
+  border-color: #0f3460 !important;
+}
+
+.dark-mode button[class*="addBtn"] {
+  color: #ffffff !important;
 }
