@@ -9,6 +9,7 @@ import CategoryFilter from "./components/CategoryFilter/CategoryFilter";
 import ProductList from "./components/ProductList/ProductList";
 import Cart from "./components/Cart/Cart";
 import Footer from "./components/Footer/Footer";
+import NotFound from "./components/NotFound/NotFound";
 
 function App() {
   const [products, setProducts] = useState(productsData);
@@ -123,6 +124,10 @@ function App() {
                 </main>
               }
             />
+
+            <Route path="/ajouter-produit" element={<AddProduct />} />
+
+            <Route path="*" element={<NotFound />} />
           </Routes>
 
           <Footer />
