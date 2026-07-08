@@ -10,6 +10,7 @@ import ProductList from "./components/ProductList/ProductList";
 import Cart from "./components/Cart/Cart";
 import Footer from "./components/Footer/Footer";
 import NotFound from "./components/NotFound/NotFound";
+import AddProduct from "./components/AddProduct/AddProduct";
 
 function App() {
   const [products, setProducts] = useState(productsData);
@@ -62,6 +63,22 @@ function App() {
       .includes(searchTerm.toLowerCase());
     return matchesCategory && matchesSearch;
   });
+
+  const handleAddProduct = (newProductData) => {
+    setProducts((prevProducts) => {
+      const nextId =
+        prevProducts.length > 0
+          ? Math.max(...prevProducts.map((p) => p.id)) + 1
+          : 1;
+
+      const productWithId = {
+        ...newProductData,
+        id: nextId,
+      };
+
+      return [...prevProducts, productWithId];
+    });
+  };
 
   return (
     <BrowserRouter>
@@ -125,7 +142,10 @@ function App() {
               }
             />
 
-            <Route path="/ajouter-produit" element={<AddProduct />} />
+            <Route
+              path="/add-product"
+              element={<AddProduct onAddProduct={handleAddProduct} />}
+            />
 
             <Route path="*" element={<NotFound />} />
           </Routes>
