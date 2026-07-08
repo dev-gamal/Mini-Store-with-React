@@ -20,7 +20,7 @@ function Header({ isDarkMode, setIsDarkMode }) {
         </NavLink>
 
         <NavLink
-          to="/ajouter-produit"
+          to="/add-product"
           className={({ isActive }) =>
             isActive ? `${styles.link} ${styles.active}` : styles.link
           }
