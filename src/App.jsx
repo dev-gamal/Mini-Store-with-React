@@ -82,29 +82,15 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div
-        className={isDarkMode ? "dark-mode" : "light-mode"}
-        style={{
-          minHeight: "100vh",
-          padding: "0 20px",
-          fontFamily: "sans-serif",
-        }}
-      >
-        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+      <div className={`app-wrapper ${isDarkMode ? "dark-mode" : "light-mode"}`}>
+        <div className="main-container">
           <Header isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
 
           <Routes>
             <Route
               path="/"
               element={
-                <main
-                  style={{
-                    display: "grid",
-                    gridTemplateColumns: "2fr 1fr",
-                    gap: "2rem",
-                    alignItems: "start",
-                  }}
-                >
+                <main className="main-layout">
                   <section>
                     <SearchBar
                       searchTerm={searchTerm}
@@ -116,10 +102,10 @@ function App() {
                       setSelectedCategory={setSelectedCategory}
                     />
 
-                    <h2 style={{ marginBottom: "1rem" }}>Our products</h2>
+                    <h2 className="products-title">Our products</h2>
 
                     {displayedProducts.length === 0 ? (
-                      <p style={{ fontStyle: "italic" }}>
+                      <p className="empty-message">
                         No products were found matching your selection.
                       </p>
                     ) : (
