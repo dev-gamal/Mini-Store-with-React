@@ -61,7 +61,7 @@ function AddProduct({ onAddProduct }) {
             {...register("category")}
             className={errors.category ? styles.inputError : ""}
           >
-            <option value="">-- Sélectionnez une catégorie --</option>
+            <option value="">-- Select a category --</option>
             <option value="Electronics">Electronics</option>
             <option value="Clothes">Clothes</option>
             <option value="Micromobility">Micromobility</option>

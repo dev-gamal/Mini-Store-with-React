@@ -1,13 +1,13 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import styles from "./Header.module.css";
 
 function Header({ isDarkMode, setIsDarkMode }) {
   return (
     <header className={styles.header}>
-      <div className={styles.logo}>
+      <Link to="/" className={styles.logo}>
         <span className={styles.icon}>🛍️</span>
         <h1>Mini Store</h1>
-      </div>
+      </Link>
 
       <nav className={styles.nav}>
         <NavLink
